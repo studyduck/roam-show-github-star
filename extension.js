@@ -168,6 +168,8 @@ function addGithubStar(el) {
     return;
   }
 
+  el.dataset.showGithubStar = "true";
+
   const starEl = document.createElement("span");
   starEl.className = "bp3-icon bp3-icon-star"; // ⭐
   starEl.style["color"] = API.settings.get(starColorSettingId) || "orange";
@@ -190,7 +192,7 @@ function addGithubStar(el) {
       boxEl.appendChild(numEl);
       el.appendChild(boxEl);
 
-      el.dataset.showGithubStar = "true";
+      // el.dataset.showGithubStar = "true";
     })
     .catch((err) => {
       console.log("get GithubStarCount err", err);
